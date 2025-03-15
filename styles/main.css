@@ -1,0 +1,499 @@
+/* General Styles */
+body {
+    background-color: #000000; /* Fully black */
+    color: #ffffff; /* White text */
+    font-family: 'Latin Modern Roman', serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #000000; /* Fully black */
+    border-bottom: 1px solid #ffffff; /* Add a border for separation */
+    display: flex;
+    justify-content: center; /* Center the header text */
+    align-items: center;
+    position: relative; /* For positioning the menu toggle */
+}
+
+header h1 {
+    margin: 0;
+}
+
+.menu-toggle {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    left: 20px; /* Position the toggle button on the left */
+}
+
+nav.sidebar {
+    width: 20%;
+    background-color: #000000; /* Fully black */
+    padding: 10px;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    border-right: 1px solid #ffffff; /* Add a border for separation */
+    transition: transform 0.3s ease;
+}
+
+nav.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav.sidebar ul li {
+    margin: 15px 0;
+    position: relative; /* For the neon-green underline */
+}
+
+nav.sidebar ul li a {
+    color: #ffffff; /* White links */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav.sidebar ul li a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #39ff14; /* Neon green */
+    animation: underline 0.3s ease;
+}
+
+@keyframes underline {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.in-page-nav {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #1a1a1a; /* Slightly lighter black for notes */
+    border-radius: 5px;
+}
+
+.in-page-nav h3 {
+    color: #00bcd4; /* Highlight color for headings */
+    margin-bottom: 10px;
+}
+
+.in-page-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.in-page-nav ul li {
+    margin: 10px 0;
+    position: relative; /* For the neon-green underline */
+}
+
+.in-page-nav ul li a {
+    color: #ffffff; /* White links */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.in-page-nav ul li a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #39ff14; /* Neon green */
+    animation: underline 0.3s ease;
+}
+
+main {
+    margin-left: 22%;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+.journal-entry {
+    margin-bottom: 40px;
+}
+
+.highlight {
+    color: #00bcd4; /* Highlight color for important text */
+}
+
+.oath-box {
+    border: 1px solid #ffffff;
+    padding: 15px;
+    background-color: #1a1a1a; /* Slightly lighter black for notes */
+    font-style: italic;
+}
+
+.first-letter {
+    font-size: 24px;
+    color: #00bcd4; /* Highlight color for first letters */
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #000000; /* Fully black */
+    margin-top: auto;
+    border-top: 1px solid #ffffff; /* Add a border for separation */
+}
+
+/* External Links */
+a[href^="http"] {
+    font-style: italic;
+    color: #800080; /* Purple */
+    text-decoration: none;
+}
+
+a[href^="http"]:hover {
+    text-decoration: underline;
+}
+
+/* Recent Events Section */
+.events-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.event-card {
+    background-color: #1a1a1a; /* Slightly lighter black for cards */
+    border: 1px solid #ffffff; /* White border */
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(57, 255, 20, 0.2); /* Neon green shadow */
+}
+
+.event-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ffffff; /* White border */
+}
+
+.event-content {
+    padding: 15px;
+}
+
+.event-content h3 {
+    margin: 0 0 10px;
+    color: #39ff14; /* Neon green for headings */
+}
+
+.event-content p {
+    margin: 0 0 15px;
+    color: #ffffff; /* White text */
+    line-height: 1.6;
+}
+
+.event-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #39ff14; /* Neon green */
+    color: #000000; /* Black text */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.event-link:hover {
+    background-color: #2cc70f; /* Darker neon green on hover */
+}
+
+/* Tree of Members Styles */
+.member-group {
+    margin-bottom: 40px;
+}
+
+.member-group h2 {
+    color: #39ff14; /* Neon green for headings */
+    border-bottom: 2px solid #39ff14; /* Neon green underline */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.member-card {
+    background-color: #1a1a1a; /* Slightly lighter black for cards */
+    border: 1px solid #ffffff; /* White border */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(57, 255, 20, 0.2); /* Neon green shadow */
+}
+
+.member-card .name {
+    font-size: 1.2em;
+    color: #39ff14; /* Neon green for names */
+    margin-bottom: 10px;
+}
+
+.member-card .quote {
+    font-style: italic;
+    color: #ffffff; /* White text */
+    margin-bottom: 10px;
+}
+
+.member-card .email a {
+    color: #800080; /* Purple for email links */
+    text-decoration: none;
+    font-style: italic;
+}
+
+.member-card .email a:hover {
+    text-decoration: underline;
+}
+
+.member-card .member-label {
+    color: #ffffff; /* White text */
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+/* Library Styles */
+.library-section {
+    margin-bottom: 40px;
+}
+
+.library-section h2 {
+    color: #39ff14; /* Neon green for headings */
+    border-bottom: 2px solid #39ff14; /* Neon green underline */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.library-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Space between items */
+}
+
+.item {
+    background-color: #1a1a1a; /* Slightly lighter black for cards */
+    border: 1px solid #ffffff; /* White border */
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(57, 255, 20, 0.2); /* Neon green shadow */
+}
+
+.cover-image {
+    width: 120px;
+    height: 160px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.item-title a {
+    color: #39ff14; /* Neon green for titles */
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.item-title a:hover {
+    text-decoration: underline;
+}
+
+.item-description {
+    color: #ffffff; /* White text */
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.item-meta {
+    color: #888888; /* Gray text for meta info */
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.item-tag {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.item-tag.pdf {
+    background-color: #007bff; /* Blue for PDF */
+    color: #ffffff;
+}
+
+.item-tag.video {
+    background-color: #dc3545; /* Red for Video */
+    color: #ffffff;
+}
+
+.item-tag.journal {
+    background-color: #28a745; /* Green for Journal */
+    color: #ffffff;
+}
+
+.item-tag.article {
+    background-color: #ffc107; /* Yellow for Article */
+    color: #000000;
+}
+
+.item-date {
+    color: #888888; /* Gray text for date */
+    font-size: 0.8em;
+    text-align: right;
+}
+
+/* Search Bar Styles */
+.search-bar-container {
+    margin-bottom: 30px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ffffff; /* White border */
+    border-radius: 5px;
+    background-color: #1a1a1a; /* Slightly lighter black */
+    color: #ffffff; /* White text */
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#search-input:focus {
+    border-color: #39ff14; /* Neon green border on focus */
+    box-shadow: 0 0 8px rgba(57, 255, 20, 0.5); /* Neon green glow */
+    outline: none;
+}
+
+/* Article Page Styles */
+.article-header {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #39ff14; /* Neon green underline */
+}
+
+.article-header h2 {
+    color: #39ff14; /* Neon green for subtitle */
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.article-header .author,
+.article-header .date,
+.article-header .topics {
+    color: #ffffff; /* White text */
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+.article-content {
+    line-height: 1.8;
+}
+
+.article-content h3 {
+    color: #39ff14; /* Neon green for section headings */
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.article-content p {
+    color: #ffffff; /* White text */
+    margin-bottom: 20px;
+}
+
+.article-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Contact Section Styles */
+.contact-details {
+    background-color: #1a1a1a; /* Slightly lighter black for cards */
+    border: 1px solid #ffffff; /* White border */
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.contact-details p {
+    color: #ffffff; /* White text */
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.contact-details a {
+    color: #39ff14; /* Neon green for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: #2cc70f; /* Darker neon green on hover */
+    text-decoration: underline;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show the menu toggle button */
+    }
+
+    nav.sidebar {
+        width: 100%;
+        transform: translateX(-100%);
+        z-index: 1000;
+    }
+
+    nav.sidebar.active {
+        transform: translateX(0);
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    .in-page-nav {
+        margin-top: 10px;
+    }
+}
